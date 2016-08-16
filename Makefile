@@ -5,7 +5,7 @@ CC := gcc
 TARGET = message_producer
 
 $(TARGET): $(OBJFILES)
-	$(CXX) $(OBJFILES) -o $@ -lrdkafka++ -lz -lrt -lpthread
+	$(CXX) $(OBJFILES) -o $@ -lrdkafka -lrdkafka++ -lz -lrt -lpthread
 
 $(OBJFILES): $(SRCFILES)
 	$(CXX) -DDEBUG -D_REENTRANT -g -c main.cpp
